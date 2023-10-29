@@ -67,7 +67,6 @@ import MyButton from '@/components/UI/MyButton';
 import axios from 'axios';
 import MySelect from '@/components/UI/MySelect';
 import MyInput from '@/components/UI/MyInput';
-import PostPage from '@/components/PostPage_1';
 
 export default {
   /** Специальное поле components: для регистрации компонентов */
@@ -78,7 +77,6 @@ export default {
     MyDialog,
     PostList,
     PostForm,
-    PostPage
   },
   data() {
     return {
