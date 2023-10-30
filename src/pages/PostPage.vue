@@ -35,14 +35,7 @@
 </template>
 
 <script>
-/** Синтаксис пути через точку */
 import PostForm from '@/components/PostForm';
-/** Синтаксис пути через собаку (удобнее)
- * собака - это элиас, который ссылается на папку src
- * Например:
- * import Data from '../../../data/someData'; - плохой вариант,
- * import Data from '@data/someData' - хороший вариант.
- */
 import PostList from '@/components/PostList';
 import MyDialog from '@/components/UI/MyDialog';
 import MyButton from '@/components/UI/MyButton';
