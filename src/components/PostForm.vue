@@ -14,6 +14,7 @@
          @input="post.title = $event.target.value"  и  @input="post.body = $event.target.value"
           -->
     <my-input
+        v-focus
         v-model="post.title"
         type="text"
         placeholder="Название"

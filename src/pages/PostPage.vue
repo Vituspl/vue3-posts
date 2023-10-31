@@ -4,6 +4,7 @@
     <my-input
         v-model="searchQuery"
         placeholder="Поиск...."
+        v-focus
     />
     <div class="app__btns">
       <my-button
@@ -30,7 +31,7 @@
     />
     <div v-else>Идет загрузка ...</div>
 
-    <div ref="observer" class="observer"></div>
+    <div v-intersection="loadMorePosts" class="observer"></div>
   </div>
 </template>
 
@@ -129,21 +130,11 @@ export default {
       }
     }
   },
+  /**  Хук mounted() (из life-cycle) реализует динамическую подгрузку постов вызывая
+   * ф-ию  fetchPosts()
+   */
   mounted() {
     this.fetchPosts();
-    console.log(this.$refs.observer);
-    const options = {
-      rootMargin: "0px",
-      threshold: 1.0,
-    };
-    // Чтобы не терять контекст this, ф-ию перепишем как стрелочную.
-    const callback = (entries, observer) => {
-      if (entries[0].isIntersecting && this.page < this.totalPages) {
-        this.loadMorePosts();
-      }
-    };
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(this.$refs.observer);
   },
 
   /** Сортировка с помощью Вычисляемых свойств */
