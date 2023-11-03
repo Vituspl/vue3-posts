@@ -3,6 +3,7 @@ import App from './App';
 import router from '@/router/router';
 import components from '@/components/UI';
 import directives from '@/directives';
+import store from '@/store';
 
 // Создаем и смонтируем корневой экземпляр.
 const app = createApp(App);
@@ -20,4 +21,5 @@ directives.forEach(directive => {
 // позволить приложению знать о его наличии.
 app
     .use(router)
+    .use(store)
     .mount('#app');
