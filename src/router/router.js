@@ -4,6 +4,7 @@ import PostPage from '@/pages/PostPage';
 import About from '@/pages/About';
 import PostIdPage from '@/pages/PostIdPage';
 import PostPageWithStore from '@/pages/PostPageWithStore';
+import PostPageCompositionApi from '@/pages/PostPageCompositionApi';
 
 
 const routes = [
@@ -26,7 +27,11 @@ const routes = [
     {
         path: '/store',
         component: PostPageWithStore
-    }
+    },
+    {
+        path: '/composition',
+        component: PostPageCompositionApi
+    },
 ];
 
 const router = createRouter({
